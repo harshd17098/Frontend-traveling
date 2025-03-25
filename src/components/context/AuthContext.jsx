@@ -14,7 +14,7 @@ function AuthContextProvider({ children }) {
 
     const fetchProfile = async (currentToken) => {
         try {
-            const res = await axios.get("https://backend-travel-80o2.onrender.com/user/profile", {
+            const res = await axios.get("http://localhost:7890/user/profile", {
                 headers: { Authorization: `Bearer ${currentToken}` },
             });
             setUser(res.data.user);
@@ -22,7 +22,7 @@ function AuthContextProvider({ children }) {
             localStorage.setItem("role", "user");
         } catch (error) {
             try {
-                const res = await axios.get("https://backend-travel-80o2.onrender.com/admin/profile", {
+                const res = await axios.get("http://localhost:7890/admin/profile", {
                     headers: { Authorization: `Bearer ${currentToken}` },
                 });
                 // console.log("auth res",res);

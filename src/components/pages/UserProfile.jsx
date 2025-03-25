@@ -12,7 +12,7 @@ const UserProfile = () => {
     const fetchProfile = async () => {
       if (!token) return;
       try {
-        const res = await axios.get("https://backend-travel-80o2.onrender.com/user/profile", {
+        const res = await axios.get("http://localhost:7890/user/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(res.data.user);
@@ -32,6 +32,28 @@ const UserProfile = () => {
         <p><strong>Name:</strong> {user.name}</p>
         <p><strong>Email:</strong> {user.email}</p>
       </div>
+
+      {/* <h3 className="text-xl font-semibold mt-4">Flights Added</h3>
+      {flights.length === 0 ? <p>No flights added.</p> : (
+        <ul className="list-disc pl-5">
+          {flights.map((flight) => (
+            <li key={flight._id} className="border p-2 my-2 rounded">
+              {flight.flightName} ({flight.departure} → {flight.arrival}) - {flight.seats} seats
+            </li>
+          ))}
+        </ul>
+      )} */}
+
+      {/* <h3 className="text-xl font-semibold mt-4">Hotels Added</h3> */}
+      {/* {hotels.length === 0 ? <p>No hotels added.</p> : (
+        <ul className="list-disc pl-5">
+          {hotels.map((hotel) => (
+            <li key={hotel._id} className="border p-2 my-2 rounded">
+              {hotel.name} - Located in {hotel.location}
+            </li>
+          ))}
+        </ul>
+      )} */}
     </div>
   );
 };

@@ -16,7 +16,7 @@ const FinalBooking = () => {
   useEffect(() => {
     const fetchFlightDetails = async () => {
       try {
-        const res = await axios.get(`https://backend-travel-80o2.onrender.com/flights/fetchFlight/${id}`, {
+        const res = await axios.get(`http://localhost:7890/flights/fetchFlight/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setFlight(res.data.singleFlight);
@@ -43,7 +43,7 @@ const FinalBooking = () => {
       return toast.error("Please select at least one seat to proceed.");
     }
     try {
-      const res = await axios.post("https://backend-travel-80o2.onrender.com/booking/bookFlight",
+      const res = await axios.post("http://localhost:7890/booking/bookFlight",
         { flightId: flight._id, selectedSeats },
         { headers: { Authorization: `Bearer ${token}` } })
       toast.success("Booking confirmed!", res.data);
@@ -55,7 +55,7 @@ const FinalBooking = () => {
   useEffect(() => {
     let fetchBookings = async () => {
       try {
-        let res = await axios.get("https://backend-travel-80o2.onrender.com/booking/getFlight", { 
+        let res = await axios.get("http://localhost:7890/booking/getFlight", { 
           headers: { Authorization: `Bearer ${token}` },
          });
          const temparr = res.data.getBooking
