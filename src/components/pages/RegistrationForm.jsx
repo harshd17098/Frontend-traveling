@@ -22,7 +22,7 @@ const navigate= useNavigate()
     
     try {
       if (role=="admin") {
-        const res = await axios.post("http://localhost:7890/admin/register",newUser)
+        const res = await axios.post("https://backend-travel-80o2.onrender.com/admin/register",newUser)
         if (res) {
           setTimeout(() => { 
             navigate("/login");
@@ -30,7 +30,7 @@ const navigate= useNavigate()
         }
       }
       else{
-        const res= await axios.post("http://localhost:7890/user/register",newUser)
+        const res= await axios.post("https://backend-travel-80o2.onrender.com/user/register",newUser)
         if (res) {
           setTimeout(() => { 
             navigate("/login");

@@ -49,7 +49,7 @@ const Home = () => {
     const fetchFlights = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:7890/flights/get", {
+        const res = await axios.get("https://backend-travel-80o2.onrender.com/flights/get", {
           headers: { Authorization: `Bearer ${token}` },
         });
         // console.log(res.data.allFlights);
@@ -91,7 +91,7 @@ const Home = () => {
     const fetchHotel = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:7890/hotels/get", {
+        const res = await axios.get("https://backend-travel-80o2.onrender.com/hotels/get", {
           headers: { Authorization: `Bearer ${token}` },
         })
         // console.log(res.data.allHotel);

@@ -25,7 +25,7 @@ const AdminDashboard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(data);
-    let res = await axios.post("http://localhost:7890/flights/add", data, {
+    let res = await axios.post("https://backend-travel-80o2.onrender.com/flights/add", data, {
       headers: { Authorization: `Bearer ${token}` },
     })
     // console.log(data);
@@ -38,7 +38,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
-        const response = await axios.get("http://localhost:7890/AdminDashboard", {
+        const response = await axios.get("https://backend-travel-80o2.onrender.com/AdminDashboard", {
           headers: { Authorization: `Bearer ${token}` },
         });
       } catch (error) {
@@ -72,7 +72,7 @@ const AdminDashboard = () => {
     // console.log("Form Data Submitted:",formData);
 
     try {
-      let res = await axios.post("http://localhost:7890/hotels/add", hotelData, {
+      let res = await axios.post("https://backend-travel-80o2.onrender.com/hotels/add", hotelData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data"

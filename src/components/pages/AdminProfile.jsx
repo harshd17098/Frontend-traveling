@@ -12,7 +12,7 @@ const AdminProfile = () => {
     const fetchFlight = async () => {
       if (!token) return;
       try {
-        const res = await axios.get("http://localhost:7890/admin/getFlight", {
+        const res = await axios.get("https://backend-travel-80o2.onrender.com/admin/getFlight", {
           headers: { Authorization: `Bearer ${token}` },
         });
         // console.log(res.data);
@@ -30,7 +30,7 @@ const AdminProfile = () => {
     const fetchHotel = async () => {
       if (!token) return;
       try {
-        const res = await axios.get("http://localhost:7890/admin/getHotel", {
+        const res = await axios.get("https://backend-travel-80o2.onrender.com/admin/getHotel", {
           headers: { Authorization: `Bearer ${token}` },
         })
         // console.log(res.data);
@@ -76,7 +76,7 @@ const AdminProfile = () => {
               {/* Display Hotel Image */}
               {hotel.image && (
                 <img
-                  src={`http://localhost:7890${hotel.image}`}
+                  src={`https://backend-travel-80o2.onrender.com${hotel.image}`}
                   alt={hotel.hotelName}
                   className="w-full h-48 object-cover rounded-lg mb-4"
                 />

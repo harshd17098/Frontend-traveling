@@ -36,7 +36,7 @@ const Login = () => {
     console.log(formData);
     try {
       if (role === "admin") {
-        const res = await axios.post("http://localhost:7890/admin/login", { ...formData, role }, {
+        const res = await axios.post("https://backend-travel-80o2.onrender.com/admin/login", { ...formData, role }, {
           headers: { "Content-Type": "application/json" }
         });
 
@@ -49,7 +49,7 @@ const Login = () => {
         }, 2000);
       }
       else {
-        const res = await axios.post("http://localhost:7890/user/login", { ...formData, role }, {
+        const res = await axios.post("https://backend-travel-80o2.onrender.com/user/login", { ...formData, role }, {
           headers: { "Content-Type": "application/json" }
         })
         // console.log(res);

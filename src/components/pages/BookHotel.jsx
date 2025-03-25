@@ -9,7 +9,7 @@ const BookHotel = ({ availableHotels, loading }) => {
   const handleBookHotel = async (hotelId) => {
     try {
       const res = await axios.post(
-        `http://localhost:7890/hotels/book/${hotelId}`,
+        `https://backend-travel-80o2.onrender.com/hotels/book/${hotelId}`,
         {},
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
@@ -34,7 +34,7 @@ const BookHotel = ({ availableHotels, loading }) => {
           {availableHotels.map((hotel) => (
             <div key={hotel._id} className="bg-white shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105">
               <img
-                src={`http://localhost:7890${hotel.image}`}
+                src={`https://backend-travel-80o2.onrender.com${hotel.image}`}
                 alt={hotel.hotelName}
                 className="w-full h-48 object-cover"
               />

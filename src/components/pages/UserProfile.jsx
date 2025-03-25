@@ -12,7 +12,7 @@ const UserProfile = () => {
     const fetchProfile = async () => {
       if (!token) return;
       try {
-        const res = await axios.get("http://localhost:7890/user/profile", {
+        const res = await axios.get("https://backend-travel-80o2.onrender.com/user/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(res.data.user);
